@@ -28,6 +28,9 @@ class InMemoryEmployeeRepository {
 
   }
 
+  update(employee){
+    this.employeeList.set(employee.id, employee)
+  }
 
   load(employeeList) {
 

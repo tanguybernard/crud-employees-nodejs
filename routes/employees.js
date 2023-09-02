@@ -3,7 +3,7 @@ const router = express.Router();
 const Employee = require('../domain/employee');
 const { v4: uuidv4 } = require('uuid');
 
-const employeeController = (employeeRepository) => {
+const employeeRouter = (employeeRepository) => {
 
   console.log("controller")
 
@@ -60,6 +60,16 @@ const employeeController = (employeeRepository) => {
 
   });
 
+  //save updated employee
+  router.put('/:id', function(req, res) {
+
+    const { id } = req.params;
+    const { firstName, lastName, department } = req.body;
+
+
+    employeeRepository.update(new Employee(id, firstName, lastName, department))
+  });
+
   router.delete("/:id", (req, res) => {
   });
 
@@ -69,4 +79,4 @@ const employeeController = (employeeRepository) => {
 
 
 
-module.exports = employeeController;
+module.exports = employeeRouter;
