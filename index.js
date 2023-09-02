@@ -22,15 +22,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/employees", employeeController(employeeRepository));
 
-function availableRoutesString() {
-  return app._router.stack
-    .filter(r => r.route)
-    .map(r => Object.keys(r.route.methods)[0].toUpperCase().padEnd(7) + r.route.path)
-    .join("\n")
-}
-
-console.log(availableRoutesString());
-
 app.listen(PORT,()=>{
   console.log("server is running on port ",PORT)
 })

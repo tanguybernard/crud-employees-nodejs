@@ -17,6 +17,17 @@ class InMemoryEmployeeRepository {
     return list;
   }
 
+  findById(id){
+
+    if(this.employeeList.has(id)){
+      return this.employeeList.get(id)
+    }
+    else {
+      return null;
+    }
+
+  }
+
 
   load(employeeList) {
 

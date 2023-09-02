@@ -44,8 +44,19 @@ const employeeController = (employeeRepository) => {
 
 
 
-  router.put("/:id", (req, res) => {
-    const { name, email, mobile, city } = req.body;
+  router.get("/:id", (req, res) => {
+    const { id } = req.params;
+
+
+    const employee = employeeRepository.findById(id)
+
+    if(employee){
+      res.status(200).json(employee)
+    }
+    else{
+      res.status(404).send();
+    }
+
 
   });
 
