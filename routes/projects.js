@@ -8,12 +8,7 @@ const ProjectController = require('../controller/project-controller');
 const projectRouter = (projectRepository) => {
 
   const repo = new InMemoryProjectRepository();
-  console.log(repo.findAll())
   const controller = new ProjectController(repo)
-
-  console.log(controller)
-
-  console.log(repo.findAll())
 
   //obligé de bind car si on ne bind pas c'est comme si on prend getAll sans son context et le router doit l'utiliser.
   //ou alors call la méthode via arrow function, (req, res) => controller.getAll(req,res)
