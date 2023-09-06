@@ -1,20 +1,22 @@
 class Project {
 
   id
-  listEmployee = []
+  name
+  employeeIds = []
 
-  constructor(id, listEmployee) {
+  constructor(id, name, employeeIds) {
     this.id = id;
-    this.listEmployee = listEmployee
+    this.name = name
+    this.listEmployee = employeeIds
   }
 
 
   setEmployee(employeeIds){
-    this.listEmployee = employeeIds
+    this.employeeIds = employeeIds
   }
 
   addEmployee(employeeId) {
-    this.listEmployee.push(employeeId)
+    this.employeeIds.push(employeeId)
   }
 
 }

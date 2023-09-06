@@ -9,7 +9,6 @@ const employeesData = require("./data/employees")
 const InMemoryProjectRepository = require('./infrastructure/in-memory-project-repository');
 const projectRouter = require('./routes/projects');
 const employeeRepository = new InMemoryEmployeeRepository();
-const projectRepository = new InMemoryProjectRepository();
 
 
 employeeRepository.load(employeesData)
@@ -24,7 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/employees", employeeRouter(employeeRepository));
-app.use("/api/projects", projectRouter(projectRepository));
+app.use("/api/projects", projectRouter());
 
 app.listen(PORT,()=>{
   console.log("server is running on port ",PORT)

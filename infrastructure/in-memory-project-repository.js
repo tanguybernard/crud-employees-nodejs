@@ -22,7 +22,7 @@ class InMemoryProjectRepository {
     }
 
     this.projectList.forEach((project)=> {
-      list.push(new Project(project.id, project.listEmployee))
+      list.push(new Project(project.id, project.name, project.listEmployee))
     })
     return list;
   }
@@ -38,14 +38,14 @@ class InMemoryProjectRepository {
 
   }
 
-  update(employee){
-    this.projectList.set(employee.id, employee)
+  replace(project){
+    this.projectList.set(project.id, project)
   }
 
   load(projectList) {
 
     projectList.forEach((value) => {
-      this.projectList.set(value.id, new Employee(value.id, value.firstName, value.lastName, value.department))
+      //this.projectList.set(value.id, new Employee(value.id, value.firstName, value.lastName, value.department))
 
     })
 

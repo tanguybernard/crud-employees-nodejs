@@ -40,6 +40,10 @@ class InMemoryEmployeeRepository {
     })
 
   }
+  delete(id){
+    this.employeeList.delete(id)
+  }
+
 }
 
 module.exports = InMemoryEmployeeRepository;

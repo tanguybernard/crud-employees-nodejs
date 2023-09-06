@@ -5,8 +5,6 @@ const { v4: uuidv4 } = require('uuid');
 
 const employeeRouter = (employeeRepository) => {
 
-  console.log("controller")
-
   router.get("/", (req, res) => {
 
     const listEmployee = employeeRepository.findAll();
@@ -36,8 +34,6 @@ const employeeRouter = (employeeRepository) => {
 
     employeeRepository.save(employee);
 
-
-    console.log()
     res.status(201).location('/api/employees/' + id).json();
 
   });
@@ -70,8 +66,12 @@ const employeeRouter = (employeeRepository) => {
     employeeRepository.update(new Employee(id, firstName, lastName, department))
   });
 
-  router.delete("/:id", (req, res) => {
-  });
+  router.delete('/:id', function(req, res) {
+    const { id } = req.params;
+    employeeRepository.delete(id)
+    res.status(204).send()
+
+  })
 
   return router;
 

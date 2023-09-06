@@ -4,8 +4,8 @@
 Récupérer les employées du service Sales et retourner les dans un fichiers
 
 
-Récupérer les employéées n'ayant pas de départements
-
+Prendre les employees Sales et supprimer les de leurs preojets actuel,
+pour tous les mettre dans un nouveau projet
 
 
 
