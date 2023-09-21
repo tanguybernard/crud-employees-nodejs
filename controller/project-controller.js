@@ -10,15 +10,6 @@ class ProjectController {
   }
 
   getAll(req, res){
-
-    console.log(this)
-
-
-    console.log("GET ALL PROEJCTS")
-    console.log(this.projectRepository)
-
-
-
       const list = this.projectRepository.findAll();
       res.json(list);
 

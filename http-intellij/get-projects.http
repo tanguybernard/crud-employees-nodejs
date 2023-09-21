@@ -1,0 +1,7 @@
+### Get employees
+GET http://localhost:4000/api/employees
+Accept: application/json
+
+### Get projects
+GET http://localhost:4000/api/projects
+Accept: application/json

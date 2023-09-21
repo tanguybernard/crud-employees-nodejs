@@ -6,7 +6,6 @@ const employeeRouter = require("./routes/employees")
 const PORT = 4000
 const InMemoryEmployeeRepository = require('./infrastructure/in-memory-employee-repository');
 const employeesData = require("./data/employees")
-const InMemoryProjectRepository = require('./infrastructure/in-memory-project-repository');
 const projectRouter = require('./routes/projects');
 const employeeRepository = new InMemoryEmployeeRepository();
 

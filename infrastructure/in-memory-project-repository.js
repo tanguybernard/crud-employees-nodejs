@@ -1,4 +1,3 @@
-const Employee = require('../domain/employee') ;
 const Project = require('../domain/project');
 
 
@@ -7,7 +6,6 @@ class InMemoryProjectRepository {
   projectList = new Map();
 
   constructor() {
-    this.projectList.set("1", new Project(1, []))
   }
 
   save(project){
@@ -22,7 +20,7 @@ class InMemoryProjectRepository {
     }
 
     this.projectList.forEach((project)=> {
-      list.push(new Project(project.id, project.name, project.listEmployee))
+      list.push(new Project(project.id, project.name, project.employees))
     })
     return list;
   }
@@ -44,9 +42,8 @@ class InMemoryProjectRepository {
 
   load(projectList) {
 
-    projectList.forEach((value) => {
-      //this.projectList.set(value.id, new Employee(value.id, value.firstName, value.lastName, value.department))
-
+    projectList.forEach((project) => {
+      this.projectList.set(project.id, new Project(project.id, project.name, project.employees))
     })
 
   }
