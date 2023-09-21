@@ -1,0 +1,61 @@
+### Check response status, headers, and content-type
+POST http://localhost:4000/api/projects
+Content-Type: application/json
+
+{
+  "name": "Great project",
+  "employees": [
+    "3928cd00-1104-492a-8d0c-b01f5f524faf", "97d686e7-fc99-4f13-b9dd-127578038849"
+  ]
+}
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 201, "Response status is not 201");
+  });
+
+  client.global.set("idProject", response.body.id);
+%}
+
+### Get project
+GET http://localhost:4000/api/projects/{{idProject}}
+Accept: application/json
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+
+  client.test("Request executed successfully", function() {
+    client.assert(response.body.name === "Great project", "Project name is not 'Great project'");
+  });
+
+  client.test("Check response id", function() {
+    client.assert(response.body.id === client.global.get("idProject"), "Project id is not correct");
+  });
+%}
+
+
+### Update project
+PUT http://localhost:4000/api/projects/{{idProject}}
+Content-Type: application/json
+
+{
+  "id": "{{idProject}}",
+  "name": "Super Project Name",
+  "employees": [
+    "3928cd00-1104-492a-8d0c-b01f5f524faf"
+  ]
+}
+
+> {%
+  client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+  });
+
+  client.test("Request executed successfully", function() {
+    client.assert(response.body.name === "Super Project Name", "Project name is not a super project name");
+  });
+%}
+
+### End

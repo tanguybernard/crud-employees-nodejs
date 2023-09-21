@@ -7,7 +7,7 @@ class Project {
   constructor(id, name, employeeIds) {
     this.id = id;
     this.name = name
-    this.listEmployee = employeeIds
+    this.employeeIds = employeeIds
   }
 
 

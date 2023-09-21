@@ -37,12 +37,14 @@ class ProjectController {
   put(req, res){
     const projectId = req.params.id;
     const { name, employees } = req.body;
+    console.log(req.body)
     const project = this.projectRepository.findById(projectId);
     if (!project) {
       res.status(404).json({ error: 'Project not found' });
     } else {
       const newProject = new Project(projectId, name, employees);
       this.projectRepository.replace(newProject)
+      console.log(newProject)
       res.json(newProject);
     }
 
@@ -64,11 +66,9 @@ class ProjectController {
       const { name, employees } = req.body;
       const newProject = new Project(uuidv4(), name, employees);
       this.projectRepository.save(newProject)
-      res.json(newProject);
-
-      res.json({ success: true });
+      res.status(201).json(newProject);
     } catch (err) {
-      next(err);
+      res.status(500).json({})
     }
 
 
