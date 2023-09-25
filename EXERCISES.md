@@ -5,7 +5,7 @@
 
 En tant que manager, je souhaiterai visualiser les projets et leurs membres formater de cette manière:
 
-Mon Super Projet
+Exemple: Mon Super Projet
 
 | Nom             | Poste     |
 |:----------------|:----------|
@@ -14,10 +14,10 @@ Mon Super Projet
 
 Projet Exploration
 
-| Nom                 | Poste         |
-|:--------------------|:--------------|
-| Mike Horn           | Product Owner | 
-| Dora L'exploratrice | Sales         | 
+| Nom                | Poste         |
+|:-------------------|:--------------|
+| Mike Horn          | Product Owner | 
+| Dora Lexploratrice | Sales         | 
 
 
 ## US-2
