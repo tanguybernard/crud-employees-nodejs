@@ -19,7 +19,7 @@ export class ProjectService {
       const employees = [];
       project.employees.forEach(function(employeeId){
         const employee = this.employeeHttpService.getEmployeeById(employeeId)
-        employees.push(new Employee(employee.id, employee.firstName + " " + employee.lastName, employee.department);
+        employees.push(new Employee(employee.id, employee.firstName + " " + employee.lastName, employee.department));
       })
 
       projects.push(new Project(project.id, project.name, employees))
