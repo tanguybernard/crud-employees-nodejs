@@ -51,13 +51,13 @@ const employees = [
     id: "8adeb7f8-8b3b-43e9-bb04-35abadfd9497",
     firstName: 'Anni-Frid',
     lastName: 'Lyngstad',
-    department: 'Sales'
+    department: 'Developer'
   },
   {
     id: "58142307-8400-4ea4-810a-cd6b3dbf6ee0",
     firstName: 'Bob',
     lastName: 'Lenon',
-    department: 'Sales'
+    department: 'Developer'
   },
   {
     id: "cd8442eb-1c1c-4ce4-93f6-a2aeb80ad6a9",
