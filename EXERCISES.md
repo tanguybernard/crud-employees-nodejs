@@ -1,18 +1,22 @@
 
 # Exercises
 
+## US-0
+
+En tant que manager je souhaiterai, lister les projets de mon entreprise. 
+
 ## US-1
 
 En tant que manager, je souhaiterai visualiser les projets et leurs membres formater de cette manière:
 
-Exemple: Mon Super Projet
+__Mon Super Projet__
 
 | Nom             | Poste     |
 |:----------------|:----------|
 | John Doe        | Developer | 
 | Lisa Smith      | Sales     | 
 
-Projet Exploration
+__Projet Exploration__
 
 | Nom                | Poste         |
 |:-------------------|:--------------|
